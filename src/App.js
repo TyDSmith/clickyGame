@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import './game.css';
+import TopHeader from './components/topheader'
+import GameComponent from './components/gamebox';
+import cryptocards from './cryptocards.json';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state= {
+    cryptocards,
+    currentScore: 0,
+    topScore: 0,
+    correctIncorrect: "",
+    clicked: []
+  };
+
+
+  render(){
+    return (
+      <div className="App">
+        <TopHeader />
+        <h1>Clicky Game</h1>
+        <h2>Click every crypto <strong>once</strong>. If you click the same one twice your score will be reset!</h2>
+        <GameComponent />
+      </div>
+    );
+  }
+
 }
 
 export default App;

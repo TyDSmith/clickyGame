@@ -1,0 +1,9 @@
+#TopHeader{
+    background: orange;
+    width: 100%;
+    padding: 20px;
+}
+
+#GameComponent{
+    background: rgb(112, 112, 112);
+};
